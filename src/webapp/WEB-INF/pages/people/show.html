@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>CARS LIST</h2>
+<div class="table table-header">
+    <div class="id">ID</div>
+    <div class="name">Name</div>
+    <div class="surname">Surname</div>
+    <div class="age">Age</div>
+</div>
+<div class="table">
+    <div class="id" th:utext="${person.getId()}">VALUE</div>
+    <div class="name" th:utext="${person.getName()}">VALUE</div>
+    <div class="surname" th:utext="${person.getSurname()}">VALUE</div>
+    <div class="age" th:utext="${person.getAge()}">VALUE</div>
+    <!--    <div class="btns">-->
+    <!--        <button class="acceptBtn" @click="saveRequest(item.idRequest)">Принять запрос</button>-->
+    <!--        <button class="rejectBtn" @click="rejectRequest(item.idRequest)">Отклонить запрос</button>-->
+    <!--    </div>-->
+</div>
+
+</body>
+<style>
+    .table{
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .table-header{
+        text-transform: uppercase;
+        border-bottom: 3px solid mediumslateblue;
+        font-weight: bold;
+    }
+    .table div{
+        border-bottom: solid 1px #e3e3e3;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>CARS LIST</h2>
+<div class="table table-header">
+    <div class="id">ID</div>
+    <div class="name">Name</div>
+    <div class="surname">Surname</div>
+    <div class="age">Age</div>
+    <div class="age"> Edit</div>
+</div>
+<div th:each="person : ${people}" class="table">
+    <div class="id" th:utext="${person.id}">user</div>
+    <div class="name"><a th:href="@{/{id}(id=${person.id})}" th:utext="${person.name}">user</a></div>
+    <div class="surname" th:utext="${person.surname}">user</div>
+    <div class="age" th:utext="${person.age}">user</div>
+    <div>
+        <button class=""><a th:href="@{/{id}/edit(id=${person.id})}">Edit</a></button>
+        <form th:method="DELETE" th:action="@{/{id}(id=${person.getId})}">
+            <button type="submit" class="">Delete</button>
+        </form>
+    </div>
+
+</div>
+    <button class="addBtn"><a th:href="@{/new}">Add User</a></button>
+
+
+</body>
+<style>
+    .table{
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: space-around;
+        width: 100%;
+        border-bottom: solid 1px #e3e3e3;
+     }
+    .table-header{
+        text-transform: uppercase;
+        border-bottom: 3px solid mediumslateblue;
+        font-weight: bold;
+    }
+    .table div{
+        padding: 10px 50px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .addBtn{
+        width: 100px;
+        height: 30px;
+        background-color: #e3e3e3;
+        border-radius: 5px;
+        border-color: #e3e3e3;
+    }
+</style>
+</html>
