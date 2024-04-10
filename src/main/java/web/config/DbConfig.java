@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath:hibernate.properties")
+@PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 public class DbConfig {
     private final Environment env;
@@ -27,7 +27,6 @@ public class DbConfig {
     public DbConfig(Environment env) {
         this.env = env;
     }
-
 
     @Bean
     public DataSource getDataSource() {

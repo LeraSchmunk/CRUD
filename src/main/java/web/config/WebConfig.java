@@ -7,8 +7,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.*;
 import java.util.EnumSet;
 
-public class InitApp extends AbstractAnnotationConfigDispatcherServletInitializer {
-
+public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
